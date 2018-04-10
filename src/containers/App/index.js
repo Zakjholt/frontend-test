@@ -66,16 +66,24 @@ export default class App extends Component {
   };
 
   buildCallSelect = callId => () => {
-    this.setState({ detailLook: callId }, this.fetchLatestCallData);
+    this.setState({ detailLook: callId }, () =>
+      this.fetchLatestCallData(callId)
+    );
   };
 
   fetchLatestCallData = async callId => {
     try {
       const { data } = await ReadCall(callId);
 
-      this.setState({ callData: { ...this.state.callData, [callId]: data } });
+      this.setState({
+        callData: {
+          ...this.state.callData,
+          [callId]: { ...data, created_at: new Date(data.created_at) }
+        }
+      });
     } catch (err) {
       console.error(err);
+      // do things with it here
     }
   };
 

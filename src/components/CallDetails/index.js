@@ -16,6 +16,12 @@ const BackButton = styled.button`
   align-self: flex-start;
   font-size: 15px;
   cursor: pointer;
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 `;
 
 const ArchiveButton = BackButton.extend`

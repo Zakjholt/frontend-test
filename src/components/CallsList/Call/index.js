@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Logo from './logo';
 import Time from './Time';
 
 const monthNames = [
@@ -32,10 +33,18 @@ const CallContainer = styled.div`
   justify-content: center;
   position: relative;
   cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 `;
 
 const CallIcon = styled.div`
   flex: 0 1 10%;
+  img {
+    height: 10px;
+  }
 `;
 
 const CallDetails = styled.div`
@@ -88,7 +97,9 @@ export default class Call extends Component {
           {displayDate && (
             <DateDisplay>{this.buildDate(created_at)}</DateDisplay>
           )}
-          <CallIcon>{direction === 'inbound' ? 'in' : 'out'}</CallIcon>
+          <CallIcon>
+            <Logo direction={direction} />
+          </CallIcon>
           <CallDetails>
             <FromNumber>{to || 'Unknown'}</FromNumber>
             <ToText>tried to call on {from}</ToText>

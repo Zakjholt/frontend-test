@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/aircall/frontend-test"
   },
+  "scripts": {
+    "start": "gulp"
+  },
   "license": "MIT",
   "dependencies": {
     "express": "4.14.*"

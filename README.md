@@ -45,7 +45,7 @@ Didn't succeed to install it on your own? Don't waste 20min more, there you go:
 
 ```
 npm install
-gulp
+npm start
 ```
 
 ## API documentation

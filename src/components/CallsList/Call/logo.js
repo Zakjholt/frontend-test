@@ -4,7 +4,7 @@ import outboundIcon from '../../../assets/images/out.svg';
 
 export default ({ direction }) =>
   direction === 'inbound' ? (
-    <img src={inboundIcon} />
+    <img src={inboundIcon} alt="inbound" />
   ) : (
-    <img src={outboundIcon} />
+    <img src={outboundIcon} alt="outbound" />
   );

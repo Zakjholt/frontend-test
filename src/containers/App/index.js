@@ -72,6 +72,10 @@ export default class App extends Component {
   };
 
   fetchLatestCallData = async callId => {
+    if (!callId) {
+      return;
+    }
+
     try {
       const { data } = await ReadCall(callId);
 
